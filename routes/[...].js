@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
       console.log('[fetch request error]', request, error);
     },
     async onResponseError({ request, response }) {
-      console.log('[fetch response error]', request, response.status, response.body);
+      console.log('[fetch response error]', request, response._data);
     }
   });
 
