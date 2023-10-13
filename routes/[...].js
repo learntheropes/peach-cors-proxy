@@ -28,6 +28,10 @@ export default defineEventHandler(async (event) => {
     body = await readBody(event);
   };
 
+  setResponseHeaders(event, {
+    'Access-Control-Allow-Origin': '*'
+  });
+
   return await apiFetch(`/${params}`, {
     method,
     headers,
