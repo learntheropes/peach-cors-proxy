@@ -6,11 +6,14 @@ export default defineEventHandler(async (event) => {
   const apiFetch = ofetch.create({
     baseURL: `https://api.peachbitcoin.com`,
     // ignoreResponseError: true,
+    async onRequest({ request, options }) {
+      console.log("[peach fetch request]", request, options);
+    },
     async onRequestError({ request, error }) {
-      console.log('[fetch request error]', request, error);
+      console.log('[peach fetch request error]', request, error);
     },
     async onResponseError({ request, response }) {
-      console.log('[fetch response error]', request, response._data);
+      console.log('[peach fetch response error]', request, response._data);
     }
   });
 
