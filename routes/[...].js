@@ -23,6 +23,12 @@ export default defineEventHandler(async (event) => {
 
   const query = getQuery(event);
 
+  console.log('method', method);
+  console.log('params', params);
+  console.log('headers', headers);
+  console.log('query', query);
+  console.log('body', body);
+
   let body;
   if (method !== 'GET') {
 
