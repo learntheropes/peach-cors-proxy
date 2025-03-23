@@ -9,6 +9,9 @@ export default defineEventHandler(async (event) => {
     async onRequest({ request, options }) {
       console.log("[peach fetch request]", request, options);
     },
+    async onResponse({ request, response, options }) {
+      console.log("[peach fetch response]", request, response.status, response.body);
+    },
     async onRequestError({ request, error }) {
       console.log('[peach fetch request error]', request, error);
     },
